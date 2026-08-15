@@ -1,0 +1,23 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+.pytest_cache/
+
+# IDEs
+.vscode/
+.idea/
+
+# Local Certs
+.cert/
+
+# Downloaded models
+mediapipe/tasks/*.task
+
+# Notebooks
+notebooks/

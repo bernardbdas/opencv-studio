@@ -1,0 +1,23 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "defaultBase": "main",
+  "namedInputs": {
+    "default": ["sharedGlobals", "{projectRoot}/**/*"],
+    "sharedGlobals": []
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["default", "^default"]
+    },
+    "lint": {
+      "inputs": ["default"]
+    }
+  },
+  "projects": {
+    "web": "apps/web",
+    "mobile": "apps/mobile",
+    "backend": "apps/backend",
+    "shared": "libs/shared"
+  }
+}

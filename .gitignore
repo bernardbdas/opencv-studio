@@ -1,0 +1,122 @@
+# OS-generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Node.js / Package Managers
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Nx cache and build files
+.nx/
+.nx-cache/
+.nx-workspace/
+
+# Expo / React Native / Mobile
+.expo/
+*.jks
+*.keystore
+
+# Vite / Web builds
+dist/
+out/
+build/
+.next/
+.nuxt/
+
+# Python / Poetry / UV
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.venv/
+venv/
+ENV/
+env/
+.env
+local.env
+*.env
+env.json
+**/env.json
+.python-version
+
+# PyTorch and Machine Learning model weights / assets
+*.pt
+*.pth
+*.onnx
+*.weights
+*.bin
+*.model
+*.h5
+*.tflite
+*.task
+.mediapipe/
+
+# ssl / certs
+.cert/
+
+# IDEs & Editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.claude/
+.kilo/
+
+# Drafts & temporary logs
+linkedin_post.txt
+*.log
+
+# Local backend downloaded models
+apps/backend/src/models/
+
+# Compressed archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.tgz
+*.gz
+
+# Large Media files
+*.mp4
+*.mov
+*.webm
+*.avi
+*.mkv
+*.mp3
+*.wav
+
+# Local databases & workspace locks
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3

@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  h1, h2, h3, h4, h5, h6, .font-outfit {
+    font-family: 'Outfit', sans-serif;
+  }
+  
+  code, kbd, samp, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+:root {
+  --bg-color: #080c14;
+  --panel-bg: rgba(13, 20, 38, 0.55);
+  --panel-border: rgba(255, 255, 255, 0.05);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  
+  --accent-primary: #06b6d4;
+  --accent-hover: rgba(6, 182, 212, 0.15);
+  --accent-border: rgba(6, 182, 212, 0.35);
+  --accent-glow: rgba(6, 182, 212, 0.2);
+}
+
+.light-mode {
+  --bg-color: #f1f5f9;
+  --panel-bg: rgba(255, 255, 255, 0.65);
+  --panel-border: rgba(15, 23, 42, 0.06);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+}
+
+.theme-solid {
+  --panel-bg: #0d1426;
+}
+.light-mode.theme-solid {
+  --panel-bg: #ffffff;
+  --panel-border: rgba(15, 23, 42, 0.12);
+}
+
+.accent-cyan {
+  --accent-primary: #06b6d4;
+  --accent-hover: rgba(6, 182, 212, 0.15);
+  --accent-border: rgba(6, 182, 212, 0.35);
+  --accent-glow: rgba(6, 182, 212, 0.2);
+}
+.accent-violet {
+  --accent-primary: #8b5cf6;
+  --accent-hover: rgba(139, 92, 246, 0.15);
+  --accent-border: rgba(139, 92, 246, 0.35);
+  --accent-glow: rgba(139, 92, 246, 0.2);
+}
+.accent-emerald {
+  --accent-primary: #10b981;
+  --accent-hover: rgba(16, 185, 129, 0.15);
+  --accent-border: rgba(16, 185, 129, 0.35);
+  --accent-glow: rgba(16, 185, 129, 0.2);
+}
+.accent-rose {
+  --accent-primary: #f43f5e;
+  --accent-hover: rgba(244, 63, 94, 0.15);
+  --accent-border: rgba(244, 63, 94, 0.35);
+  --accent-glow: rgba(244, 63, 94, 0.2);
+}
+
+/* Reusable Glass Panel Class */
+.glass-panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--panel-border);
+  color: var(--text-primary);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-solid .glass-panel {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.glass-panel-hover {
+  transition: all 0.25s ease-in-out;
+}
+.glass-panel-hover:hover {
+  border-color: var(--accent-border);
+  box-shadow: 0 0 20px -5px var(--accent-glow);
+}
+
+/* Premium Navigation Tab styles */
+.custom-tab-list {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  padding: 4px;
+  border-radius: 0.875rem;
+  display: flex;
+  gap: 2px;
+  width: 100%;
+}
+
+.custom-tab-trigger {
+  font-family: 'Inter', 'Outfit', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.01em;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.65rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+
+.custom-tab-trigger:hover {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.light-mode .custom-tab-trigger:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.custom-tab-trigger[data-state=active] {
+  background-color: var(--accent-hover) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--accent-border) !important;
+  box-shadow: 0 0 12px -3px var(--accent-glow) !important;
+  font-weight: 600;
+}
+
+/* Custom Gradients using variables */
+.text-gradient {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, #818cf8 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Color overrides for theme compliance */
+.bg-cyan-500 {
+  background-color: var(--accent-primary) !important;
+}
+.bg-cyan-500\/10 {
+  background-color: var(--accent-hover) !important;
+}
+.bg-cyan-500\/20 {
+  background-color: var(--accent-hover) !important;
+}
+.border-cyan-500\/30 {
+  border-color: var(--accent-border) !important;
+}
+.border-cyan-500\/40 {
+  border-color: var(--accent-border) !important;
+}
+.border-cyan-400 {
+  border-color: var(--accent-border) !important;
+}
+.text-cyan-300 {
+  color: var(--accent-primary) !important;
+}
+.text-cyan-400 {
+  color: var(--accent-primary) !important;
+}
+.text-cyan-350 {
+  color: var(--accent-primary) !important;
+}
+
+/* Violet Color overrides for 3D Depth Lab theme compliance */
+.bg-violet-500 {
+  background-color: var(--accent-primary) !important;
+}
+.bg-violet-500\/10 {
+  background-color: var(--accent-hover) !important;
+}
+.bg-violet-500\/15 {
+  background-color: var(--accent-hover) !important;
+}
+.bg-violet-500\/20 {
+  background-color: var(--accent-hover) !important;
+}
+.bg-violet-500\/30 {
+  background-color: var(--accent-hover) !important;
+}
+.border-violet-500\/30 {
+  border-color: var(--accent-border) !important;
+}
+.border-violet-500\/35 {
+  border-color: var(--accent-border) !important;
+}
+.border-violet-500\/40 {
+  border-color: var(--accent-border) !important;
+}
+.border-violet-400 {
+  border-color: var(--accent-border) !important;
+}
+.text-violet-300 {
+  color: var(--accent-primary) !important;
+}
+.text-violet-400 {
+  color: var(--accent-primary) !important;
+}
+
+/* Global Background and Border Overrides to map to CSS variables */
+.bg-slate-800,
+.bg-slate-850,
+.bg-slate-900,
+.bg-slate-950,
+.bg-slate-955\/80,
+.bg-slate-955\/40,
+.bg-slate-950\/80,
+.bg-slate-950\/70 {
+  background-color: var(--panel-bg) !important;
+}
+
+/* Opacity overrides to preserve visual grouping inside panels */
+.bg-slate-900\/10 {
+  background-color: rgba(13, 20, 38, 0.25) !important;
+}
+.light-mode .bg-slate-900\/10 {
+  background-color: rgba(15, 23, 42, 0.03) !important;
+}
+.bg-slate-900\/40 {
+  background-color: rgba(13, 20, 38, 0.5) !important;
+}
+.light-mode .bg-slate-900\/40 {
+  background-color: rgba(15, 23, 42, 0.05) !important;
+}
+.bg-slate-900\/60 {
+  background-color: rgba(13, 20, 38, 0.6) !important;
+}
+.light-mode .bg-slate-900\/60 {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+}
+.bg-slate-900\/35 {
+  background-color: rgba(13, 20, 38, 0.35) !important;
+}
+.light-mode .bg-slate-900\/35 {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+}
+.bg-slate-900\/90 {
+  background-color: rgba(13, 20, 38, 0.9) !important;
+}
+.light-mode .bg-slate-900\/90 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+.bg-slate-950\/85 {
+  background-color: rgba(8, 12, 20, 0.85) !important;
+}
+.light-mode .bg-slate-950\/85 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+
+
+.border-slate-700,
+.border-slate-800,
+.border-slate-805\/80,
+.border-slate-805\/85,
+.border-slate-850,
+.border-slate-900,
+.border-slate-800\/80 {
+  border-color: var(--panel-border) !important;
+}
+
+.bg-\[\#060911\] {
+  background-color: var(--bg-color) !important;
+}
+
+/* Dynamic text color mapping for Light Mode compliance */
+.light-mode .text-slate-100,
+.light-mode .text-slate-200,
+.light-mode .text-slate-205,
+.light-mode .text-slate-300,
+.light-mode .text-slate-305,
+.light-mode .text-slate-350,
+.light-mode .text-slate-400,
+.light-mode .text-slate-450,
+.light-mode .text-slate-500 {
+  color: var(--text-secondary) !important;
+}
+
+.light-mode .text-white,
+.light-mode .text-slate-50 {
+  color: var(--text-primary) !important;
+}

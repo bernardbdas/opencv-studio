@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/backend/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "uv run python -m uvicorn apps.backend.src.main:app --host 0.0.0.0 --port 8000 --reload"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "uv run python -m py_compile apps/backend/src/main.py"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "uv run python -m py_compile apps/backend/src/main.py"
+      }
+    }
+  }
+}

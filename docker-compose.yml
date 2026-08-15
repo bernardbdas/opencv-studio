@@ -1,0 +1,21 @@
+services:
+  opencv-studio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: opencv-studio
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+    volumes:
+      - .:/app
+      - /app/.venv
+      - /app/apps/frontend/node_modules
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
