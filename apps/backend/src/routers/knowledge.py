@@ -8,7 +8,7 @@ from typing import List, Dict, Any
 
 router = APIRouter(prefix="/api/knowledge", tags=["Knowledge Base"])
 
-KB_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../knowledge-base"))
+KB_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../.obsidian"))
 
 class ArticleMeta(BaseModel):
     key: str
