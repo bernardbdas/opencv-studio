@@ -8,15 +8,15 @@ build: generate-env
     bun install
 
 # Run backend FastAPI, web React studio, and mobile Expo app concurrently
-start:
+start: generate-env
     nx run-many --target=serve --all --parallel
 
 # Run web studio frontend
-start-web:
+start-web: generate-env
     bunx vite apps/web --host 0.0.0.0 --force
 
 # Run mobile Expo app
-start-mobile:
+start-mobile: generate-env
     cd apps/mobile && bun run start
 
 # Start the backend server
@@ -24,7 +24,7 @@ server:
     just start-backend
 
 # Start web and mobile clients concurrently
-client:
+client: generate-env
     bunx nx run-many --target=serve --projects=web,mobile --parallel
 
 

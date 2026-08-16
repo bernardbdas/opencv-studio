@@ -9,7 +9,11 @@ def main():
     if not os.path.exists(env_path):
         env_path = os.path.join(root_dir, ".env")
     if not os.path.exists(env_path):
-        env_path = os.path.join(root_dir, ".env.example")
+        env_path = os.path.join(root_dir, "example.env")
+        if os.path.exists(env_path):
+            import shutil
+            shutil.copyfile(env_path, os.path.join(root_dir, "local.env"))
+            env_path = os.path.join(root_dir, "local.env")
         
     print(f"Reading environment variables from: {env_path}")
     
